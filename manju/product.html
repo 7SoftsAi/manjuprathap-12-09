@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    position: relative;
+    background-color: #787171; /* Equivalent to bg-zinc-100 */
+}
+
+.background-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 3rem; /* Equivalent to text-5xl */
+    font-weight: 800; /* Equivalent to font-extrabold */
+    color: white;
+    padding: 1.5rem; /* p-6 */
+}
+
+.hd { 
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(188, 189, 196);
+    padding-top: 40px;
+    background-color: rgb(88, 88, 200);
+}
+
+.new-hd {
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(78, 93, 206);
+    padding-top: 40px;
+    background-color: rgb(72, 70, 70);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: rgb(224, 224, 237);
+    background-color: rgb(88, 88, 200);
+}
+
+.new-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: rgb(224, 224, 237);
+    background-color: rgb(72, 70, 70);
+}
+
+.description li {
+    font-size: 1.4rem;
+    list-style-type: none;
+    padding: 0px 0px 0px 30px;
+    border-style: solid;
+    border-width: 0px 0px 0px 4px;
+    border-color: rgb(142, 142, 206);
+    margin-top: 18px;
+}
+
+.new-description li {
+    font-size: 1.4rem;
+    list-style-type: none;
+    padding: 0px 0px 0px 30px;
+    border-style: solid;
+    margin-top: 25px;
+    border-width: 0px 0px 0px 4px;
+    border-color: rgb(142, 142, 206);
+}
+
+.logo {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 40px;
+    gap: 3.5rem; /* Space between the logos */
+}
+
+.logo img {
+    width: 80px; /* Adjust size as needed */
+    height: 50px; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure logos fit within the container */
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .container, .new-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .left-content, .right-content {
+        padding: 2rem;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .hd, .new-hd {
+        font-size: 2.5rem;
+        padding-top: 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .description li, .new-description li {
+        font-size: 1.2rem;
+        padding: 0px 0px 0px 20px;
+        margin-top: 15px;
+    }
+
+    .logo {
+        margin-left: 20px;
+        margin-top: 20px;
+        gap: 1.5rem; /* Adjust space for smaller screens */
+    }
+
+    .logo img {
+        width: 60px; /* Adjust size as needed for smaller screens */
+        height: 40px; /* Maintain aspect ratio */
+    }
+
+    .background-img {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .hd, .new-hd {
+        font-size: 2rem;
+        padding-top: 15px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .description li, .new-description li {
+        font-size: 1rem;
+        padding: 0px 0px 0px 15px;
+        margin-top: 10px;
+    }
+
+    .logo {
+        margin-left: 10px;
+        margin-top: 10px;
+        gap: 1rem; /* Adjust space for very small screens */
+    }
+
+    .logo img {
+        width: 50px; /* Adjust size as needed for very small screens */
+        height: 35px; /* Maintain aspect ratio */
+    }
+}
+
+.left-content, .right-content {
+    flex: 1;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    max-width: 100%;
+}
+
+</style>
+<body>
+   <!-- ---------- header start----- -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./services.html">SERVICES</a>
+            <a href="./product.html">PRODUCT LINES</a>
+            <a href="./demonstration.html">DEMONSTRATIONS AND EXHIBITIONS</a>
+            <a href="./hr.html">HR DEPARTMENT</a>
+            <a href="./careers.html">CAREERS</a>
+            <a href="./contact.html">CONTACT</a>
+            <i class="fas fa-search search-icon"></i>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.header nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+     <!-- ---------- header End----- -->
+
+    <!-- -----------home start----- -->
+    <div class="background">
+        <img aria-hidden="true" alt="Product Lines Background" src="images/home.jpg" class="background-img">
+        <div class="overlay">
+            <h1 class="title">PRODUCT LINES</h1>
+        </div>
+    </div>
+
+
+    <div class="hd">
+        DSS and C4I Systems
+    </div>
+    <div class="container">
+        <div class="left-content">
+            <ul class="description">
+                <li>C4I systems for military logistics</li>
+                <li>Full management systems and monitoring of soldiers</li>
+                <li>Applications for tracking and controlling military and operational personnel</li>
+            </ul>
+        </div>
+        <div class="right-content">
+            <img src="images/dt.jpg" alt="Descriptive alt text for the image" class="image" />
+        </div>
+    </div>
+    
+    <div class="new-hd">
+        Military and operational applications
+    </div>
+    <div class="new-container">
+        <div class="right-content">
+            <img src="images/app.jpg" alt="Descriptive alt text for the image" class="image" />
+        </div>
+        <div class="left-content">
+            <ul class="new-description">
+                <li>Resource optimizations applications in small commando teams</li>
+                <li>A hybrid application for managing military personnel in an operational mission</li>
+                <li>Logistics inventory management applications for operators in the field, base, and training ops</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="hd">
+        Fiscal & visual simulations
+    </div>
+    <div class="container">
+        <div class="left-content">
+            <ul class="new-description">
+                <li>Variable fidelity simulations</li>
+                <li>Implementation of fiscal simulations that consider environmental conditions, mission conditions, electromagnetic compatibility, meteorology conditions,
+                    RF, spectrum, kinetics and ballistics</li>
+                <li>Visual simulations in 3D graphic engines development</li>
+            </ul>
+            <div class="logo">
+                <img src="images/logo-1.png" alt="">
+                <img src="images/logo-2.png" alt="">
+                <img src="images/logo-3.png" alt="">
+                <img src="images/logo-4.png" alt="">
+            </div>
+        </div>
+        <div class="right-content">
+            <img src="images/desktop.jpg" alt="Descriptive alt text for the image" class="image" />
+        </div>     
+    </div>
+    
+
+     
+    <div class="new-hd">  
+        Simulators
+    </div>
+    <div class="new-container">
+        <div class="right-content">
+            <img src="images/pexels-pixabay-163443.jpg" alt="Descriptive alt text for the image" class="image" />
+        </div>
+        <div class="left-content">
+            <ul class="new-description">
+                <li>Dedicated sniper simulator for all calibers and operational sniper conditions</li>
+                <li> Infantry simulator and special missions</li>
+                <li> VR simulator for training police officers and EOD units</li>
+                <li> Air marshal simulator</li>
+                <li>Simulator for cognitive training of soldiers and operators</li>
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div class="hd">  
+        AI-based intelligence systems
+    </div>
+    <div class="container">
+        <div class="left-content">
+            <ul class="description">
+                <li>The Fire Spear system for predicting the spread of wildfires in forests and providing DSS to decision makers</li>
+                <li>Silver Ankor system for predicting the spread of CBRN on GIS maps within advanced applications of artificial intelligence</li>
+            </ul>
+        </div>
+        <div class="right-content">
+            <img src="images/map.jpg" alt="Descriptive alt text for the image" class="image" />
+        </div>
+    </div>
+
+
+     
+    <div class="new-hd">  
+        operational mission planners
+    </div>
+    <div class="new-container">
+        <div class="right-content">
+            <img src="images/planning.jpg" alt="Descriptive alt text for the image" class="image" />
+        </div>
+        <div class="left-content">
+            <ul class="new-description">
+                <li> HLS mission planner for planning the deployment of sensors, effectors, platforms and communications at strategic facilities, sensitive sites and essential plants</li>
+                <li> Border and coast defense mission planner - enables planning, analysis and optimization of system deployment throughout the entire operational train</li>
+            </ul>
+        </div>
+    </div>
+     <!-- -----------home End----- -->
+
+     <!-- ----------Footer start----- -->
+     <footer class="footer">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <p>ASGARD SYSTEMS LTD PROPERTY - 2022</p>
+        <div class="social-icons">
+            <a href="https://mail.google.com/" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://web.telegram.org/" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.pinterest.com/login/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </footer>
+     <!-- ----------Footer End----- -->
+</body>
+</html>

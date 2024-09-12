@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .slider {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 100%;
+        position: relative;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        object-fit: cover;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .slide-content h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .hero-section {
+        background-color: #0068A5;
+        color: white;
+        padding: 60px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        /* To handle responsiveness */
+    }
+
+    .hero-content {
+        max-width: 50%;
+        flex-basis: 50%;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        max-width: 600px;
+    }
+
+    .image-container {
+        max-width: 45%;
+        flex-basis: 45%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Media Query for smaller screens */
+    @media (max-width: 768px) {
+        .hero-content,
+        .image-container {
+            max-width: 100%;
+            flex-basis: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            margin-top: 20px;
+        }
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .button-container button {
+        background-color: #1E90FF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button-container button:hover {
+        background-color: #4682b4; /* Slightly darker blue on hover */
+    }
+</style>
+<body>
+   <!-- ---------- header start----- -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./services.html">SERVICES</a>
+            <a href="./product.html">PRODUCT LINES</a>
+            <a href="./demonstration.html">DEMONSTRATIONS AND EXHIBITIONS</a>
+            <a href="./hr.html">HR DEPARTMENT</a>
+            <a href="./careers.html">CAREERS</a>
+            <a href="./contact.html">CONTACT</a>
+            <i class="fas fa-search search-icon"></i>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.header nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+     <!-- ---------- header End----- -->
+
+    <!-- -----------home start----- -->
+    <div class="slider">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="images/hr1.jpg" alt="Slide 1">
+                <div class="slide-content">
+                    <h2>HR Department</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-section" style="background-color: #333;">
+        <div class="hero-content">
+            <h1>PROFESSIONAL EXPERT<br>RECRUITMENT DEPARTMENT</h1>
+            <p>At Nextstart Systems, there is a professional department of HR and external recruitment. Asher is an expert
+                in the needs of hi-tech companies, startups, and defense industries.</p>
+        </div>
+        <div class="image-container">
+            <img src="images/hr2.jpg" alt="Recruitment Image">
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>RECRUITING PROFESSIONAL <br>EMPLOYEES</h1>
+            <p>
+                Recruiting professional personnel for other companies, government offices, professional departments, and
+                academia.
+                Carrying out the process involves characterizing the position, writing job descriptions, performing
+                sourcing, and recruiting.
+                Recruitment fairs, soft and technical job interviews, conducting professional tests for candidates, and
+                accompanying the recruitment process.
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="images/hr3.jpg"alt="Recruiting Image">
+        </div>
+    </div>
+    
+    <div class="hero-section" style="background-color: #333;">
+        <div class="hero-content">
+            <h1>OUTSOURCING <br> AND INSOURCING</h1>
+            <p>
+                Carrying out outsourcing and internal sourcing processes, placing professional, technological and research personnel in the clients’ offices. The direct or indirect employment of professional workers for the company’s clients.
+            </p>
+            <div class="button-container">
+                <a href="mailto:example@example.com" style="text-decoration: none;">
+                    <button type="button">Send your CV here</button>
+                </a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="images/HR4.jpg" alt="Recruiting Image">
+        </div>
+    </div>
+
+       
+     <!-- -----------home End----- -->
+
+     <!-- ----------Footer start----- -->
+     <footer class="footer">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <p>ASGARD SYSTEMS LTD PROPERTY - 2022</p>
+        <div class="social-icons">
+            <a href="https://mail.google.com/" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://web.telegram.org/" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.pinterest.com/login/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </footer>
+     <!-- ----------Footer End----- -->
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0072BB;
+    color: white;
+}
+
+.header-m {
+    text-align: center;
+    /* margin: 340px 0px; */
+    padding: 170px 0px;
+    background-image: url(./images/1/m1.jpg);
+}
+
+.header-m h1 {
+    font-size: 5.5em;
+    margin-bottom: 40px;
+}
+
+.exhibition-m {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.exhibition-m h2 {
+    font-size: 1.8em;
+    padding: 50px 0px;
+    color: #fff;
+}
+
+.gallery-m {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 100px;
+    gap: 30px;
+    justify-content: center;
+}
+
+.gallery-m div {
+    display: flex;
+    margin-bottom: 80px;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-m img {
+    width: 48%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+
+    .header-m {
+        padding: 48px 0px;
+        background-image:url(./images/1/m22.jpg);
+    }
+
+    .header-m h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .exhibition-m h2 {
+        font-size: 20px;
+        padding: 20px 0px;
+        text-align: center;
+    }
+
+    .gallery-m div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-m img {
+        width: 250%;
+    }
+}
+
+@media (max-width: 320px) {
+
+.header-m {
+    padding: 24px 0px;
+    background-image: url(./images/1/m22.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.header-m h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.exhibition-m h2 {
+    font-size: 1.2em;
+    padding: 10px 0px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.gallery-m {
+    margin: 0px 10px;
+    gap: 15px;
+}
+
+.gallery-m div {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.gallery-m img {
+    width: 100%;
+}
+}
+    </style>
+</head>
+<body>
+   <!-- ---------- header start----- -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./services.html">SERVICES</a>
+            <a href="./product.html">PRODUCT LINES</a>
+            <a href="./demonstration.html">DEMONSTRATIONS AND EXHIBITIONS</a>
+            <a href="./hr.html">HR DEPARTMENT</a>
+            <a href="./careers.html">CAREERS</a>
+            <a href="./contact.html">CONTACT</a>
+            <i class="fas fa-search search-icon"></i>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.header nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+     <!-- ---------- header End----- -->
+
+    <!-- -----------home start----- -->
+    <div class="container">
+        <div class="header-m">
+            <h1>DEMONSTRATIONS </br>& </br>EXHIBITIONS</h1>
+        </div>
+
+        <section class="exhibition" style="background-color: #0072BB;">
+            <h2 style="text-align: center;">ISDEF EXHIBITION IN TEL AVIV IN MAY 2021</h2>
+            <div class="gallery-m">
+                <img src="images/1/1.jpeg" alt="ISDEF 1">
+                <img src="images/1/2.jpeg" alt="ISDEF 2">
+                <img src="images/1/3.jpeg" alt="ISDEF 3">
+                <img src="images/1/4.jpeg" alt="ISDEF 4">
+                <img src="images/1/5.jpeg" alt="ISDEF 5">
+                <img src="images/1/6.jpeg" alt="ISDEF 6">
+            </div>
+        </section>
+
+        <section class="exhibition-m" style="background-color: #3F3F43;">
+            <h2>MILIPOL ASIA & PACIFIC EXHIBITION IN SINGAPORE ON MAY 22</h2>
+            <div class="gallery-m" >
+                <div >
+                <img src="images/2/1.jpeg" alt="Milipol 1">
+                <img src="images/2/2.jpeg" alt="Milipol 2">
+                <img src="images/2/3.jpeg" alt="Milipol 3"> 
+                </div>
+            </div>
+        </section>
+
+        <section class="exhibition-m" style="background-color: #0072BB;">
+            <h2>EUROSATORY EXHIBITION IN PARIS ON JUNE 22</h2>
+            <div class="gallery-m">
+                <img src="./images/3/1.jpeg" alt="Eurosatory 1">
+                <img src="./images/3/2.jpeg" alt="Eurosatory 2">
+                <img src="./images/3/3.jpeg" alt="Eurosatory 3">
+                <img src="./images/3/4.jpeg" alt="Eurosatory 4">
+            </div>
+        </section>
+
+        <section class="exhibition-m" style="background-color: #3F3F43;">
+            <h2>FARNBOROUGH AIR SHOW IN ENGLAND ON JULY 22</h2>
+            <div class="gallery-m">
+                <img src="./images/4/1.jpeg" alt="Farnborough 1">
+                <img src="./images/4/2.jpeg" alt="Farnborough 2">
+                <img src="./images/4/3.jpeg" alt="Farnborough 3">
+                <img src="./images/4/4.jpeg" alt="Farnborough 4">
+            </div>
+        </section>
+
+        <section class="exhibition-m" style="background-color: #0072BB;">
+            <h2>EASTERN EUROPEAN DEFENSE CONFERENCE IN SOFIA, BULGARIA ON SEPTEMBER 22</h2>
+            <div class="gallery-m">
+                <img src="./images/5/1.jpeg" alt="Sofia 1">
+                <img src="./images/5/2.jpeg" alt="Sofia 2">
+                <img src="./images/5/3.jpeg" alt="Sofia 3">
+                <img src="./images/5/4.jpeg" alt="Sofia 4">
+                <img src="./images/5/5.jpeg" alt="Sofia 5">
+                <img src="./images/5/6.jpeg" alt="Sofia 6">
+                <img src="./images/5/7.jpeg" alt="Sofia 7">
+                <img src="./images/5/8.jpeg" alt="Sofia 8">
+                <img src="./images/5/9.jpeg" alt="Sofia 9">
+            </div>
+        </section>
+
+        <section class="exhibition-m" style="background-color: #3F3F43;">
+            <h2>LOCAL CONFERENCES, EXHIBITIONS, SYMPOSIA AND DEMONSTRATIONS</h2>
+            <div class="gallery-m">
+                <img src="./images/6/1.jpeg" alt="Local 1">
+                <img src="./images/6/2.jpeg" alt="Local 2">
+                <img src="./images/6/3.jpeg" alt="Local 3">
+                <img src="./images/6/4.jpeg" alt="Local 4">
+                <img src="./images/6/5.jpeg" alt="Local 5">
+                <img src="./images/6/6.jpeg" alt="Local 6">
+            </div>
+        </section>
+    </div>
+       
+     <!-- -----------home End----- -->
+
+     <!-- ----------Footer start----- -->
+     <footer class="footer">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <p>ASGARD SYSTEMS LTD PROPERTY - 2022</p>
+        <div class="social-icons">
+            <a href="https://mail.google.com/" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://web.telegram.org/" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.pinterest.com/login/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </footer>
+     <!-- ----------Footer End----- -->
+</body>
+</html>

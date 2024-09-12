@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: linear-gradient(to right, #8e2de2, #4a00e0); /* Great wine gradient */
+    }
+
+    /* Hero Section */
+    #hero {
+        background: url('https://img.freepik.com/free-vector/realistic-technology-background_52683-73672.jpg') no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .rizwan__hero-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        animation: slideDown 1.5s ease-in-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Services Section */
+    #services {
+        padding: 60px 20px;
+    }
+
+    .rizwan__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .rizwan__services-heading {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #fff; /* White text color for contrast */
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .rizwan__services-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rizwan__service-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin: 20px 0;
+        width: 100%; /* Full width */
+        max-width: 1200px; /* Maximum width for larger screens */
+        height: 400px; /* Fixed height */
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeUp 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .rizwan__service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .rizwan__service-card img {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .rizwan__service-content {
+        padding: 20px;
+        width: 50%;
+    }
+
+    .rizwan__service-icon {
+        font-size: 2rem;
+        color: #3498db;
+        margin-bottom: 10px;
+    }
+
+    .rizwan__service-card h3 {
+        margin: 10px 0;
+        font-size: 1.8rem; /* Increased font size */
+        color: #333;
+    }
+
+    .rizwan__service-card p {
+        font-size: 1.2rem; /* Increased font size */
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    /* Contact Us Section */
+    #contact-us {
+        background: #222;
+        color: #fff;
+        padding: 60px 20px;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .rizwan__cta-buttons .rizwan__cta-button {
+        background: #ff6600;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.3s;
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeUp 1s ease-in-out forwards;
+    }
+
+    .rizwan__cta-buttons .rizwan__cta-button:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .rizwan__cta-buttons .rizwan__cta-button:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    .rizwan__cta-buttons .rizwan__cta-button:hover {
+        background: #e65c00;
+        transform: translateY(-5px);
+    }
+
+    /* Footer */
+    footer {
+        background: #111;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Fade-In Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .rizwan__service-card {
+            flex-direction: column;
+            width: 100%;
+            max-width: none;
+            height: auto; /* Auto height for smaller screens */
+        }
+
+        .rizwan__service-card img, .rizwan__service-content {
+            width: 100%;
+        }
+
+        .rizwan__service-card img {
+            margin-bottom: 20px;
+            height: auto; /* Auto height for images in smaller screens */
+        }
+    }
+</style>
+<body>
+   <!-- ---------- header start----- -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./services.html">SERVICES</a>
+            <a href="./product.html">PRODUCT LINES</a>
+            <a href="./demonstration.html">DEMONSTRATIONS AND EXHIBITIONS</a>
+            <a href="./hr.html">HR DEPARTMENT</a>
+            <a href="./careers.html">CAREERS</a>
+            <a href="./contact.html">CONTACT</a>
+            <i class="fas fa-search search-icon"></i>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.header nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+     <!-- ---------- header End----- -->
+
+    <!-- -----------home start----- -->
+         <!-- Hero Section -->
+    <section id="hero">
+        <div class="rizwan__hero-overlay">
+            <h1>Empowering Your Business with Advanced IT Solutions</h1>
+            <p>Tailored services that enhance your operational efficiency and security.</p>
+            <a href="#services" class="rizwan__cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="rizwan__container">
+            <h2 class="rizwan__services-heading">Our Services</h2>
+            <div class="rizwan__services-grid">
+                <div class="rizwan__service-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvJwR3gdYlJP27gHXaCjiIljV1ThGgwnUzwA&s" alt=" rizwan Cybersecurity Solutions">
+                    <div class="rizwan__service-content">
+                        <div class="rizwan__service-icon">🛡️</div>
+                        <h3>Cybersecurity Solutions</h3>
+                        <p>Robust cybersecurity measures to protect your business from evolving threats.</p>
+                    </div>
+                </div>
+                <div class="rizwan__service-card">
+                    <img src="https://t4.ftcdn.net/jpg/03/14/92/75/360_F_314927575_yqFMAuXFTNC6gBflR2njRZ4bQb8dAb7y.jpg" alt="IT Infrastructure Management" alt="IT Infrastructure Management">
+                    <div class="rizwan__service-content">
+                        <div class="rizwan__service-icon">🌐</div>
+                        <h3>IT Infrastructure Management</h3>
+                        <p>Comprehensive management of your IT infrastructure for optimal performance.</p>
+                    </div>
+                </div>
+                <div class="rizwan__service-card">
+                    <img src="https://t4.ftcdn.net/jpg/05/07/66/23/360_F_507662376_BTKmPlIGBvKlRHWKRNeFt7bj7H2SynQm.jpg" alt=" rizwan Cloud Services">
+                    <div class="rizwan__service-content">
+                        <div class="rizwan__service-icon">☁️</div>
+                        <h3>Cloud Services</h3>
+                        <p>Scalable cloud solutions that adapt to your business needs.</p>
+                    </div>
+                </div>
+                <div class="rizwan__service-card">
+                    <img src="https://media.istockphoto.com/id/1530256492/vector/software-development-concept-laptop-with-open-screen-hanging-over-desk-coding-or-programming.jpg?s=612x612&w=0&k=20&c=LLywtLnfu5FETIvkaFjy_xcHnaIGmaKZYxcPKAoyPcA=" alt=" rizwan Software Development">
+                    <div class="rizwan__service-content">
+                        <div class="rizwan__service-icon">💻</div>
+                        <h3>Software Development</h3>
+                        <p>Custom software solutions to drive innovation and efficiency.</p>
+                    </div>
+                </div>
+                <div class="rizwan__service-card">
+                    <img src="https://thumbs.dreamstime.com/b/consulting-expert-advice-support-service-business-concept-97202115.jpg" alt="Consulting & Strategy">
+                    <div class="rizwan__service-content">
+                        <div class="rizwan__service-icon">💡</div>
+                        <h3>Consulting & Strategy</h3>
+                        <p>Expert guidance to align your IT strategy with your business goals.</p>
+                    </div>
+                </div>
+                <div class="rizwan__service-card">
+                    <img src="https://t3.ftcdn.net/jpg/02/51/20/20/360_F_251202063_mBlwdtqj09VrD9DmxzV0u8oAsnHKOWv0.jpg" alt="rizwan Data Management & Analytics" alt="Data Management & Analytics">
+                    <div class="rizwan__service-content">
+                        <div class="rizwan__service-icon">📊</div>
+                        <h3>Data Management & Analytics</h3>
+                        <p>Leverage data for actionable insights and better decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us">
+        <div class="rizwan__container">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us to discuss your needs and find out how we can help you.</p>
+            <div class="rizwan__cta-buttons">
+                <a href="mailto:info@deltateam.com" class="rizwan__cta-button">Email Us</a>
+                <a href="tel:+1234567890" class="rizwan__cta-button">Call Us</a>
+            </div>
+        </div>
+    </section>
+     <!-- -----------home End----- -->
+
+     <!-- ----------Footer start----- -->
+     <footer class="footer">
+        <div class="logo">
+            <img src="images/logonext10.png" alt="Logo">
+            <!-- <span>ASGARD SYSTEMS</span> -->
+        </div>
+        <p>ASGARD SYSTEMS LTD PROPERTY - 2022</p>
+        <div class="social-icons">
+            <a href="https://mail.google.com/" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/login" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://web.telegram.org/" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.pinterest.com/login/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </footer>
+     <!-- ----------Footer End----- -->
+</body>
+</html>
